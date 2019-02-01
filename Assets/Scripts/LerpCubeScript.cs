@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LerpCubeScript : MonoBehaviour {
-
+public class LerpCubeScript : MonoBehaviour 
+{
     public GameObject _cube;
     public Vector3 _leftPosition;
     public Vector3 _rightPosition;
@@ -32,5 +32,20 @@ public class LerpCubeScript : MonoBehaviour {
     }
 
     //inseert code here:
+    public void PrintDebugString()
+    {
+	Debug.Log(this.ToString());
+    }
+
+    public override string ToString()
+    {
+	string s;
+
+	s = (_cube ? "Cube positon = "+_cube.transform.position
+: "Cube not instantiated ") +"\n"
+ + "Left Position = " + _leftPosition + "\n"
+ + "Right Position = " + _rightPosition;
+	return s;
+    }
 
 }
